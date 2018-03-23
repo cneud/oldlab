@@ -1,0 +1,32 @@
+<!doctype html>
+<title>L@B :: Home</title>
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+<div class="page">
+<h1><a title="Home" href="https://cneud.net/lab/">L@B</a></h1>
+  <div class="metanav">
+  {% if not session.logged_in %}
+    <a href="{{ url_for('login') }}"><img title="Login" alt="Login" height="16" src="static/img/login.png"></a>
+  {% else %}
+    <a href="{{ url_for('logout') }}"><img title="Logout" alt="Logout" height="16" src="static/img/logout.png"></a>
+  {% endif %}
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+  </div>
+  <div>
+    <div class="column-left"><a href="/lab/data"><img width="64px" src="static/img/data.jpg"></a><br><br><h2><a href="/lab/data">Daten</a></h2><br>Diverse freie Datensets der SBB zum direkten Download</div>
+    <div class="column-center"><a href="/lab/demo"><img width="64px" src="static/img/demo.png"></a><br><br><h2><a href="/lab/demo">Demos</a></h2><br>Demos auf der Grundlage von digitalisierten SBB-Best&auml;nden</div>
+    <div class="column-right"><a href="/lab/contact"><img width="64px" src="static/img/chat.png"></a><br><br><h2><a href="/lab/contact">Infopoint</a></h2><br>Kontaktieren Sie uns und hinterlassen Sie Feedback</div>
+    <br><br>  
+</div>  
+  <!--<ul class="entries">
+    <li><h2><a href="/lab/data">Daten</a></h2>Diverse frei verf&uuml;gbare Datensets der SBB zum Download</li>
+    <li><h2><a href="/lab/demo">Demo</a></h2>Demos auf der Grundlage von digitalisierten SBB-Best&auml;nden</li>
+    <li><h2><a href="/lab/contact">Kontakt</a></h2>Nehmen Sie Kontakt mit uns auf</li>
+  </ul>-->
+  <div class="metanav">
+    <a href="http://staatsbibliothek-berlin.de/"><img height="64" src="static/img/sbb_logo.png"></a>
+  </div>
+</div>
+

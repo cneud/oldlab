@@ -1,0 +1,34 @@
+<!doctype html>
+<title>L@B :: Kontakt</title>
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+<div class="page">
+<h1><a title="Home" href="https://cneud.net/lab/">L@B</a>/<a title="Kontakt" href="contact">Kontakt</a></h1>
+  <div class="metanav">
+  {% if not session.logged_in %}
+    <a href="{{ url_for('login') }}"><img title="Login" alt="Login" height="16" src="static/img/login.png"></a>
+  {% else %}
+    <a href="{{ url_for('logout') }}"><img title="Logout" alt="Logout" height="16" src="static/img/logout.png"></a>
+  {% endif %}
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+  </div>
+  <div>
+    <div class="column-left"><a href="/lab/data"><img width="64px" src="static/img/data.jpg"></a><br><br><h2><a href="/lab/data">Daten</a></h2></div>
+    <div class="column-center"><a href="/lab/demo"><img width="64px" src="static/img/demo.png"></a><br><br><h2><a href="/lab/demo">Demos</a></h2></div>
+    <div class="column-right"><a href="/lab/contact"><img width="64px" src="static/img/chat.png"></a><br><br><h2><a href="/lab/contact">Infopoint</a></h2></div>
+    <br><br>  
+  </div>
+  <hr><br>
+  <ul class="entries">
+    <li><h2><a href="mailto:lab@sbb.spk-berlin.de"><img height="32px" src="static/img/email.jpg"></a><br><a href="mailto:lab@sbb.spk-berlin.de">Email</a></h2><br></li>
+    <li><h2><a href="https://www.facebook.com/Staatsbibliothekzuberlin/"><img height="32px" src="static/img/fb.jpg"></a><br><a href="https://www.facebook.com/Staatsbibliothekzuberlin/">Facebook</a></h2><br></li>
+    <li><h2><a href="https://twitter.com/sbb_news"><img height="32px" src="static/img/twitter.jpg"></a><br><a href="https://twitter.com/sbb_news">Twitter</a></h2><br></li>
+    <li><h2><a href="http://blog.sbb.berlin/"><img height="32px" src="static/img/wp.png"></a><br><a href="http://blog.sbb.berlin/">SBB-Blog</a></h2><br></li>
+   </ul>
+  <div class="metanav">
+    <a href="http://staatsbibliothek-berlin.de/"><img height="64" src="static/img/sbb_logo.png"></a>
+  </div>
+</div>
+

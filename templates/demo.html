@@ -1,0 +1,35 @@
+<!doctype html>
+<title>L@B :: Demos</title>
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+<div class="page">
+<h1><a title="Home" href="https://cneud.net/lab/">L@B</a>/<a title="Demos" href="demo">Demos</a></h1>
+  <div class="metanav">
+  {% if not session.logged_in %}
+    <a href="{{ url_for('login') }}"><img title="Login" alt="Login" height="16" src="static/img/login.png"></a>
+  {% else %}
+    <a href="{{ url_for('logout') }}"><img title="Logout" alt="Logout" height="16" src="static/img/logout.png"></a>
+  {% endif %}
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+  </div>
+  <div>
+    <div class="column-left"><a href="/lab/data"><img width="64px" src="static/img/data.jpg"></a><br><br><h2><a href="/lab/data">Daten</a></h2></div>
+    <div class="column-center"><a href="/lab/demo"><img width="64px" src="static/img/demo.png"></a><br><br><h2><a href="/lab/demo">Demos</a></h2></div>
+    <div class="column-right"><a href="/lab/contact"><img width="64px" src="static/img/chat.png"></a><br><br><h2><a href="/lab/contact">Infopoint</a></h2></div>
+    <br><br>  
+  </div>
+  <hr><br>
+  <ul class="entries">
+    <li><h2><a href="http://8bit-inferno.de/force/" target="_blank"><img height="54px" src="static/img/sbb_browse.png"></a><br><br></h2><a href="http://8bit-inferno.de/force/" target="_blank">Browse</a> characteristic media per century β. [by <a href="https://twitter.com/dzellhf" target="_blank">@dzellhf</a>]. If you dare to click this link, you better run Chrome or Firefox as we deny the existence of other browsers...You should also own one of the following fonts 'Helvetica Neue' or 'Helvetica Light', use a reasonably fast computer as the next page makes heavy use of JavaScript, have a fast internet connection to quickly load a lot of images, and the ability to click the ? if you have no idea what to do.<br><br><strong>[<a href="http://8bit-inferno.de/force/forceCentury.html" target="_blank">Run the demo!</a>]</strong></li>
+    <br><hr><br>
+    <li><h2><a href="https://www.deutsche-digitale-bibliothek.de/" target="_blank"><img height="42" src="static/img/ddb.png"></a></h2>
+        <p>Ziel der <a href="https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwimn9DJw8nOAhUBDywKHVrlC9MQFggfMAA&url=https%3A%2F%2Fwww.deutsche-digitale-bibliothek.de" target=_blank">Deutschen Digitalen Bibliothek</a> ist es, jedermann über das Internet freien Zugang zum kulturellen und wissenschaftlichen Erbe Deutschlands zu eröffnen, also zu Millionen von Büchern, Archivalien, Bildern, Skulpturen, Musikstücken und anderen Tondokumenten, Filmen und Noten. Als zentrales nationales Portal soll die DDB perspektivisch die digitalen Angebote aller deutschen Kultur- und Wissenschafts- einrichtungen miteinander vernetzen.<br><br><strong>[<a href="https://www.deutsche-digitale-bibliothek.de/searchresults?query=provider%3A(Staatsbibliothek+OR+zu+OR+Berlin)&offset=0&rows=20&facetValues%5B%5D=provider_fct%3DStaatsbibliothek+zu+Berlin+-+Preu%C3%9Fischer+Kulturbesitz" target="_blank">SBB@DBB</a>]</strong></p></li>
+    <br><hr><br>
+    <li><h2><a href="http://www.europeana.eu/portal/de/" target="_blank"><img height="50" src="static/img/europeana.png"></a></h2><a href="http://www.europeana.eu/portal/" target="_blank">Europeana</a> is a multi-lingual online collection of millions of digitized items from European museums, libraries, archives. More than 3,000 institutions across Europe have contributed to Europeana. Staatsbibliothek zu Berlin has been coordinating two Europeana projects, <a href="http://www.europeana-collections-1914-1918.eu/" target="_blank">Europeana Collections 1914-1918</a> and <a href="http://www.europeana-newspapers.eu/" target="_blank">Europeana Newspapers</a>.<br><br><strong>[<a href="http://www.europeana.eu/portal/en/search?f%5BDATA_PROVIDER%5D%5B%5D=Staatsbibliothek+zu+Berlin+-+Preu%C3%9Fischer+Kulturbesitz" target="_blank">SBB@Europeana</a>]</strong>&nbsp;&nbsp;<strong>[<a href="http://statistics.europeana.eu/dataprovider/staatsbibliothek-zu-berlin-preussischer-kulturbesitz" target="_blank">Statistics</a>]</strong></li><br>
+  </ul>
+  <div class="metanav">
+    <a href="http://staatsbibliothek-berlin.de/"><img height="64" src="static/img/sbb_logo.png"></a>
+  </div>
+</div>

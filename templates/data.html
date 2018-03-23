@@ -1,0 +1,40 @@
+<!doctype html>
+<title>L@B :: Daten</title>
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+<div class="page">
+<h1><a title="Home" href="https://cneud.net/lab/">L@B</a>/<a title="Daten" href="data">Daten</a></h1>
+  <div class="metanav">
+  {% if not session.logged_in %}
+    <a href="{{ url_for('login') }}"><img title="Login" alt="Login" height="16" src="static/img/login.png"></a>
+  {% else %}
+    <a href="{{ url_for('logout') }}"><img title="Logout" alt="Logout" height="16" src="static/img/logout.png"></a>
+  {% endif %}
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+  </div>
+  <div>
+    <div class="column-left"><a href="/lab/data"><img width="64px" src="static/img/data.jpg"></a><br><br><h2><a href="/lab/data">Daten</a></h2></div>
+    <div class="column-center"><a href="/lab/demo"><img width="64px" src="static/img/demo.png"></a><br><br><h2><a href="/lab/demo">Demos</a></h2></div>
+    <div class="column-right"><a href="/lab/contact"><img width="64px" src="static/img/chat.png"></a><br><br><h2><a href="/lab/contact">Infopoint</a></h2></div>
+    <br><br>  
+  </div>
+  <hr><br>
+  <ul class="entries">
+    <li><h2><a href="https://codingdavinci.de/" target="_blank"><img src="https://codingdavinci.de/img/nav-logo.png"></a></h2>
+        <p>Die Staatsbibliothek zu Berlin hat ein breites Spektrum von historisch bedeutsamen Zeitungen digitalisiert, die sie in ihrem Zeitungsinformationsystem <a href="http://zefys.staatsbibliothek-berlin.de/" target="_blank">ZEFYS</a> präsentiert. Für <a href="https://codingdavinci.de/" target="_blank">Coding da Vinci</a> stellt sie Digitalisate, Volltexte und Metadaten für fünf der wichtigsten deutschen Zeitungen aus der Zeit vor der Gründung des Deutschen Reichs bis in die ersten Jahre des Zweiten Weltkriegs zur Verfügung. Die Datensets umfassen jeweils strukturelle Metadaten im METS-XML-Containerformat für jede Ausgabe, per OCR erzeugte Volltexte im ALTO-XML-Format mit Wortkoordinaten, binarisierte TIFFs als Grundlage der OCR und JPEG2000-Bilder für die Anzeige.<br><br><strong>[<a href="https://codingdavinci.de/daten/#staatsbibliothek-zu-berlin" target="_blank">6 TiB</a>]</strong></p></li>
+    <br><hr><br>
+    <a href="http://www.europeana-newspapers.eu/" target="_blank"><img height="64px" src="static/img/enp.png"></a>
+    <li><h2><a href="http://www.primaresearch.org/datasets/ENP" target="_blank">ENP Ground Truth</a></h2>
+        <p>This online repository is the main point of reference for all activities related to evaluation within the <a href="http://www.europeana-newspapers.eu/" target="_blank">Europeana Newspapers</a> project. Its main goal is to provide a representative collection of all the types of newspapers which are and/or might be subject of ongoing or future digitisation activities. As such, it is hosting scanned images, metadata and ground truth (a representation of the ideal result of a processing step like OCR or layout analysis) on the level of individual newspaper pages.<br><br><strong>[<a href="http://www.primaresearch.org/datasets/ENP" target="_blank">7 GiB</a>]</strong></p><br></li>
+    <li><h2><a href="https://github.com/EuropeanaNewspapers/ner-corpora/tree/master/enp_DE.sbb.bio" target="_blank">ENP Named Entity Recognition</a></h2>
+        <p>The corpora comprise files from the <a href="http://www.europeana-newspapers.eu/" target="_blank">Europeana Newspapers</a> project divided by language, encoded in the BIO format (Ramshaw & Marcus, 1995). The BIO format is a simple, text-based format that divides texts into single tokens per line, and, separated by a whitespace, tags to indicate which ones are named entities. The most commonly used tags are PER (person), LOC (location) and ORG (organization).<br><br><strong>[<a href="https://github.com/EuropeanaNewspapers/ner-corpora/releases" target="_blank">1.7 MiB</a>]</strong></p></li>
+    <br><hr><br>
+    <li><h2><a href="https://www.openarchives.org/pmh/" target="_blank"><img height="50px" src="https://www.openarchives.org/images/OA100.gif"></a></h2>
+        <p><a href="https://www.openarchives.org/pmh/" target="_blank">OAI-PMH</a> interface of SBB. The Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH) is a low-barrier mechanism for repository interoperability. Data Providers are repositories that expose structured metadata via OAI-PMH. Service Providers then make OAI-PMH service requests to harvest that metadata. OAI-PMH is a set of six verbs or services that are invoked within HTTP.<br><br><strong>[<a href="http://digital.staatsbibliothek-berlin.de/oai/?verb=Identify" target="_blank">API</a>]</strong></p></li><br>
+  </ul>
+  <div class="metanav">
+    <a href="http://staatsbibliothek-berlin.de/"><img height="64" src="static/img/sbb_logo.png"></a>
+  </div>
+</div>

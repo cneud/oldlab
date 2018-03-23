@@ -1,0 +1,21 @@
+<!doctype html>
+<title>L@B</title>
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+<div class="page">
+<h1><a title="Home" href="https://cneud.net/lab/">L@B</a></h1>
+  <div class="metanav">
+  {% if not session.logged_in %}
+    <a href="{{ url_for('login') }}"><img title="Login" alt="Login" height="16" src="static/img/login.png"></a>
+  {% else %}
+    <a href="{{ url_for('logout') }}"><img title="Logout" alt="Logout" height="16" src="static/img/logout.png"></a>
+  {% endif %}
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+  </div>
+  <div class="metanav">
+    <a href="http://staatsbibliothek-berlin.de/"><img height="64" src="static/img/sbb_logo.png"></a>
+  </div>
+</div>
+
